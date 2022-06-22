@@ -23,8 +23,8 @@ function mostrarConteudo(){
   quantidadeLocalLA = roteiroALasVegas.split("<br>")[1].split("; ").length;
   quantidadeLocalM = roteiroAMoscou.split("<br>")[1].split("; ").length;
   alert("Quantidade de locais em São Paulo " + quantidadeLocalSP);
-  alert("Quantidade de locais em Las Vegas" +quantidadeLocalLA);
-  alert("Quantidade de locais em Moscou" + quantidadeLocalM);
+  alert("Quantidade de locais em Las Vegas " +quantidadeLocalLA);
+  alert("Quantidade de locais em Moscou " + quantidadeLocalM);
 
   // Roteiro B  
   roteiroBSaoPaulo = conteudo.match(/Roteiro B(.*?)\.*Roteiro C/g)[0].replaceAll("Roteiro B | ","").replaceAll("#Roteiro C","");
