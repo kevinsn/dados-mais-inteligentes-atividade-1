@@ -13,28 +13,40 @@ var conteudo = "<html><head><title>Gulliver Traveller - Roteiros</title></head><
 // alert(conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g)[2]);
 
 // Locais
-// alert(conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g)[0].split("<br>")[1].split(";"));
-// alert(conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g)[1].split("<br>")[1].split(";"));
-// alert(conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g)[2].split("<br>")[1].split(";"));
+// alert(conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g)[0].split("<br>")[1].split("; "));
+// alert(conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g)[1].split("<br>")[1].split("; "));
+// alert(conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g)[2].split("<br>")[1].split("; "));
+
+// Roteiro B
+// alert(conteudo.match(/Roteiro B(.*?)\.*Roteiro C/g)[0].replaceAll("Roteiro B | ","").replaceAll("#Roteiro C",""));
+// alert(conteudo.match(/Roteiro B(.*?)\.*Roteiro C/g)[1].replaceAll("Roteiro B | ","").replaceAll("#Roteiro C",""));
+
+// Pontos Turísticos
+// alert(conteudo.match(/Roteiro B(.*?)\.*Roteiro C/g)[0].replaceAll("Roteiro B | ","").replaceAll("#Roteiro C","").split("<br>")[1].split("; "));  
+// alert(conteudo.match(/Roteiro B(.*?)\.*Roteiro C/g)[1].replaceAll("Roteiro B | ","").replaceAll("#Roteiro C","").split("<br>")[1].split("; "));
 
 function mostrarConteudo(){
   
-  // Cidades
-  cidades = conteudo.match(/\*(.*?)\*/g);
+  // O nome das cidades avaliadas. 
   saoPaulo = conteudo.match(/\*(.*?)\*/g)[0].replaceAll("*",""); 
   lasVegas = conteudo.match(/\*(.*?)\*/g)[1].replaceAll("*","");
   moscou = conteudo.match(/\*(.*?)\*/g)[2].replaceAll("*","");
 
-  // Roteiro A
-  roteirosA = conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g);
-  roteiroSaoPaulo = conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g)[0].replaceAll("Roteiro A | ","").replaceAll("#Roteiro B","");
-  roteiroLasVegas = conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g)[1].replaceAll("Roteiro A | ","").replaceAll("#Roteiro B","");
-  roteiroMoscou = conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g)[2].replaceAll("Roteiro A | ","").replaceAll("#Roteiro B","");
+  // O conteúdo do roteiro A de cada cidade avaliada.
+  roteiroASaoPaulo = conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g)[0].replaceAll("Roteiro A | ","").replaceAll("#Roteiro B","");
+  roteiroALasVegas = conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g)[1].replaceAll("Roteiro A | ","").replaceAll("#Roteiro B","");
+  roteiroAMoscou = conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g)[2].replaceAll("Roteiro A | ","").replaceAll("#Roteiro B","");
 
-  // Locais
-  local1 = roteiroSaoPaulo.split("<br>")[1].split(";").length;
-  local2 = roteiroLasVegas.split("<br>")[1].split(";").length;
-  local3 = roteiroMoscou.split("<br>")[1].split(";").length;
+  // Quantos locais são citados no roteiro A de cada cidade.
+  quantidadeLocalSP = roteiroSaoPaulo.split("<br>")[1].split("; ").length;
+  quantidadeLocalLA = roteiroLasVegas.split("<br>")[1].split("; ").length;
+  quantidadeLocalM = roteiroMoscou.split("<br>")[1].split("; ").length;
+  
+  // O nome dos pontos turísticos localizados no bairro Centro da cidade de São Paulo.
+  pontoTuristicoCentroSP = roteiroBSaoPaulo.split("<br>")[1].split("; ");  
+  
+  // O nome dos pontos turísticos localizados no bairro Downtown na cidade de Los Angeles.
+  pontoTuristicoDowntownLA = roteiroBLasVegas.split("<br>")[1].split("; ");
 
 }
 
