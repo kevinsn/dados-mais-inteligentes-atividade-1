@@ -12,6 +12,11 @@ var conteudo = "<html><head><title>Gulliver Traveller - Roteiros</title></head><
 // alert(conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g)[1]);
 // alert(conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g)[2]);
 
+// Locais
+// alert(conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g)[0].split("<br>")[1].split(";"));
+// alert(conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g)[1].split("<br>")[1].split(";"));
+// alert(conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g)[2].split("<br>")[1].split(";"));
+
 function mostrarConteudo(){
   
   // Cidades
@@ -26,7 +31,10 @@ function mostrarConteudo(){
   roteiroLasVegas = conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g)[1].replaceAll("Roteiro A | ","").replaceAll("#Roteiro B","");
   roteiroMoscou = conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g)[2].replaceAll("Roteiro A | ","").replaceAll("#Roteiro B","");
 
-  
+  // Locais
+  local1 = roteiroSaoPaulo.split("<br>")[1].split(";").length;
+  local2 = roteiroLasVegas.split("<br>")[1].split(";").length;
+  local3 = roteiroMoscou.split("<br>")[1].split(";").length;
 
 }
 
