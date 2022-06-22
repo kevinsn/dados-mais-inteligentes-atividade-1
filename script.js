@@ -19,12 +19,16 @@ function mostrarConteudo(){
   alert(roteiroAMoscou);
 
   // Quantos locais são citados no roteiro A de cada cidade.
-  quantidadeLocalSP = roteiroSaoPaulo.split("<br>")[1].split("; ").length;
-  quantidadeLocalLA = roteiroLasVegas.split("<br>")[1].split("; ").length;
-  quantidadeLocalM = roteiroMoscou.split("<br>")[1].split("; ").length;
-  alert(quantidadeLocalSP);
-  alert(quantidadeLocalLA);
-  alert(quantidadeLocalM);
+  quantidadeLocalSP = roteiroASaoPaulo.split("<br>")[1].split("; ").length;
+  quantidadeLocalLA = roteiroALasVegas.split("<br>")[1].split("; ").length;
+  quantidadeLocalM = roteiroAMoscou.split("<br>")[1].split("; ").length;
+  alert("Quantidade de locais em São Paulo " + quantidadeLocalSP);
+  alert("Quantidade de locais em Las Vegas" +quantidadeLocalLA);
+  alert("Quantidade de locais em Moscou" + quantidadeLocalM);
+
+  // Roteiro B  
+  roteiroBSaoPaulo = conteudo.match(/Roteiro B(.*?)\.*Roteiro C/g)[0].replaceAll("Roteiro B | ","").replaceAll("#Roteiro C","");
+  roteiroBLasVegas = conteudo.match(/Roteiro B(.*?)\.*Roteiro C/g)[1].replaceAll("Roteiro B | ","").replaceAll("#Roteiro C","");
   
   // O nome dos pontos turísticos localizados no bairro Centro da cidade de São Paulo.
   pontoTuristicoCentroSP = roteiroBSaoPaulo.split("<br>")[1].split("; ");  
@@ -35,4 +39,3 @@ function mostrarConteudo(){
   alert(pontoTuristicoDowntownLA);
 
 }
-
