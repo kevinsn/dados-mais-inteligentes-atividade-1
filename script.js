@@ -3,10 +3,30 @@ var conteudo = "<html><head><title>Gulliver Traveller - Roteiros</title></head><
 // Cidades
 // alert(conteudo.match(/\*(.*?)\*/g));
 // alert(conteudo.match(/\*(.*?)\*/g)[0].replaceAll("*",""));
+// alert(conteudo.match(/\*(.*?)\*/g)[1].replaceAll("*",""));
+// alert(conteudo.match(/\*(.*?)\*/g)[2].replaceAll("*",""));
+
+// Roteiro A
+// alert(conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g));
+// alert(conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g)[0]);
+// alert(conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g)[1]);
+// alert(conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g)[2]);
 
 function mostrarConteudo(){
+  
   // Cidades
   cidades = conteudo.match(/\*(.*?)\*/g);
+  saoPaulo = conteudo.match(/\*(.*?)\*/g)[0].replaceAll("*",""); 
+  lasVegas = conteudo.match(/\*(.*?)\*/g)[1].replaceAll("*","");
+  moscou = conteudo.match(/\*(.*?)\*/g)[2].replaceAll("*","");
+
+  // Roteiro A
+  roteirosA = conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g);
+  roteiroSaoPaulo = conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g)[0].replaceAll("Roteiro A | ","").replaceAll("#Roteiro B","");
+  roteiroLasVegas = conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g)[1].replaceAll("Roteiro A | ","").replaceAll("#Roteiro B","");
+  roteiroMoscou = conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g)[2].replaceAll("Roteiro A | ","").replaceAll("#Roteiro B","");
+
+  
 
 }
 
