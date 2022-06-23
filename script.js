@@ -14,17 +14,17 @@ function mostrarConteudo(){
   roteiroASaoPaulo = conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g)[0].replaceAll("Roteiro A | ","").replaceAll("#Roteiro B","");
   roteiroALasVegas = conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g)[1].replaceAll("Roteiro A | ","").replaceAll("#Roteiro B","");
   roteiroAMoscou = conteudo.match(/Roteiro A(.*?)\.*Roteiro B/g)[2].replaceAll("Roteiro A | ","").replaceAll("#Roteiro B","");
-  alert(roteiroASaoPaulo);
-  alert(roteiroALasVegas);
-  alert(roteiroAMoscou);
+  alert("Roteiro de São Paulo: " + roteiroASaoPaulo);
+  alert("Roteiro de Las Vegas: " + roteiroALasVegas);
+  alert("Roteiro de Moscou: " + roteiroAMoscou);
 
   // Quantos locais são citados no roteiro A de cada cidade.
   quantidadeLocalSP = roteiroASaoPaulo.split("<br>")[1].split("; ").length;
   quantidadeLocalLA = roteiroALasVegas.split("<br>")[1].split("; ").length;
   quantidadeLocalM = roteiroAMoscou.split("<br>")[1].split("; ").length;
-  alert("Quantidade de locais em São Paulo " + quantidadeLocalSP);
-  alert("Quantidade de locais em Las Vegas " +quantidadeLocalLA);
-  alert("Quantidade de locais em Moscou " + quantidadeLocalM);
+  alert("Quantidade de locais em São Paulo: " + quantidadeLocalSP);
+  alert("Quantidade de locais em Las Vegas: " +quantidadeLocalLA);
+  alert("Quantidade de locais em Moscou: " + quantidadeLocalM);
 
   // Roteiro B  
   roteiroBSaoPaulo = conteudo.match(/Roteiro B(.*?)\.*Roteiro C/g)[0].replaceAll("Roteiro B | ","").replaceAll("#Roteiro C","");
@@ -32,10 +32,10 @@ function mostrarConteudo(){
   
   // O nome dos pontos turísticos localizados no bairro Centro da cidade de São Paulo.
   pontoTuristicoCentroSP = roteiroBSaoPaulo.split("<br>")[1].split("; ");  
-  alert(pontoTuristicoCentroSP);
+  alert("Pontos turísticos no Centro de SP: " + pontoTuristicoCentroSP);
   
   // O nome dos pontos turísticos localizados no bairro Downtown na cidade de Los Angeles.
   pontoTuristicoDowntownLA = roteiroBLasVegas.split("<br>")[1].split("; ");
-  alert(pontoTuristicoDowntownLA);
+  alert("Pontos turísticos de Downtown em LA: " + pontoTuristicoDowntownLA);
 
 }
